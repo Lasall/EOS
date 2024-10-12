@@ -7,7 +7,11 @@ import numpy as np
 from akkudoktoreos.class_numpy_encoder import NumpyEncoder
 
 # Import necessary modules from the project
-from akkudoktoreos.class_optimize import OptimizationParameters, optimization_problem
+from akkudoktoreos.class_optimize import (
+    OptimizationParameters,
+    OptimizeResponse,
+    optimization_problem,
+)
 from akkudoktoreos.visualize import visualisiere_ergebnisse
 
 start_hour = 0
@@ -321,3 +325,5 @@ visualisiere_ergebnisse(
 
 json_data = NumpyEncoder.dumps(ergebnis)
 print(json_data)
+
+OptimizeResponse(**ergebnis)
