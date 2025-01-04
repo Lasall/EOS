@@ -1,3 +1,4 @@
 ```{eval-sh}
-./scripts/extract_markdown.py --input-file CONTRIBUTING.md
+[ -n "${READTHEDOCS_VIRTUALENV_PATH}" ] && READTHEDOCS_PYTHON=${READTHEDOCS_VIRTUALENV_PATH}/bin/python || true
+${READTHEDOCS_PYTHON} ${READTHEDOCS_REPOSITORY_PATH:-.}/scripts/extract_markdown.py --input-file ${READTHEDOCS_REPOSITORY_PATH:-.}/CONTRIBUTING.md
 ```

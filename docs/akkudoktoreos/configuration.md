@@ -85,5 +85,6 @@ Some of the `configuration keys` have default values by definition. For most of 
 `configuration keys` the default value is just `None`, which means no default value.
 
 ```{eval-sh}
-./scripts/generate_config_md.py | ./scripts/extract_markdown.py --input-stdin --heading-level 1
+[ -n "${READTHEDOCS_VIRTUALENV_PATH}" ] && READTHEDOCS_PYTHON=${READTHEDOCS_VIRTUALENV_PATH}/bin/python || true
+${READTHEDOCS_PYTHON} ${READTHEDOCS_REPOSITORY_PATH:-.}/scripts/generate_config_md.py | ${READTHEDOCS_PYTHON} ${READTHEDOCS_REPOSITORY_PATH:-.}/scripts/extract_markdown.py --input-stdin --heading-level 1
 ```

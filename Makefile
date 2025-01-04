@@ -53,7 +53,9 @@ dist: pip
 
 # Target to generate HTML documentation
 docs: pip-dev
-	.venv/bin/sphinx-build -M html docs build/docs
+	. .venv/bin/activate; \
+	pip install -e .; \
+	sphinx-build -M html docs build/docs
 	@echo "Documentation generated to build/docs/html/."
 
 # Target to read the HTML documentation
